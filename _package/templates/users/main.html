@@ -1,0 +1,53 @@
+<main class="bg-light" style="overflow: hidden;">
+	<div class="row">
+		<div class="col-md-auto">
+			<?php
+				include __DIR__."/assets/sidebars.html";
+			?>
+		</div>
+		<div class="container-fluid col-md-auto px-5" style="min-width: 70vw; max-width: 85vw;">
+			<div class="container-fluid py-5">
+				<div class="card">
+					<div class="card-body" style="min-height: 31vw; max-height: 31vw; overflow: auto;">
+						<span class="position-absolute top-0 start-100 translate-middle p-2 bg-info border border-light rounded-circle" style="width: 42px; text-align: center;">
+							<a href=".">
+								<img src="../_images/refresh.svg">
+							</a>
+						</span>
+						<div id="chat_body">
+							<?php
+								if (count($chat_messages) > 0) {
+
+									foreach ($chat_messages as $key => $value)
+									{
+										$response = $database->getChatUser($value['id_user']);
+
+										echo "<h5>".$response[0]['name'].": <span class='lead'>".$value['messages']."</span></h5>";
+									}
+
+									if (is_array($response))
+										$_SESSION['last'] = $chat_messages[0]['id'];
+								}
+							?>
+						</div>
+					</div>	
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<div class="form-group">
+							<!-- <form action="." method="POST"> -->
+								<div class="input-group mb-3">
+									<input type="text" class="form-control" placeholder="Отправить сообщение!" aria-label="Отправить сообщение!" aria-describedby="basic-addon2" name="message">
+									<a type="button" class="input-group-text" id="basic-addon2">Отправить</a>
+								</div>
+							<!-- </form> -->
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+</main>
+<script type="text/javascript">
+	var last = <?php echo $_SESSION['last']; ?>;
+</script>

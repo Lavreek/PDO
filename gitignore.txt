@@ -1,0 +1,3 @@
+file.txt - Игнорирование file.txt
+/folder/ - Игнорирование <folder>
+/folder/second folder/ - Игнорирование <second folder>

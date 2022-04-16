@@ -1,0 +1,20 @@
+<main class="bg-light py-5">
+	<div class="container py-5">
+		<?php
+			if (!empty($message))
+				echo "<div class='alert alert-info text-center' role='alert'>".$message."</div>";
+			else
+			{
+				echo "<div class='alert alert-warning text-center' role='alert'>Если вы это видите, значить произошла какая-то ошибка.</div>";
+			}
+			echo 
+				"<div class='container py-5'>
+					<div class='row justify-content-center'>
+						<div class='alert alert-info col-md-auto'>
+							<a class='text-center text-dark' href='../'>Перейти на главную страницу</a>
+						</div>
+					</div>
+				</div>";
+		?>
+	</div>
+</main>

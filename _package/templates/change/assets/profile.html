@@ -1,0 +1,30 @@
+<main>
+    <div class="container">
+        <h1 class="h3 mb-3 fw-normal py-5 text-center">Введите информацию для изменения</h1>
+        <form action="." method="POST">
+            <input name="changename" hidden>
+            <div class="mb-3">
+                <label for="name">Новый никнейм</label>
+                <?php
+                    echo "<input class='form-control' type='text' placeholder='name@example.com' name='name' id='name' value='".$nick."'>";
+                ?>
+            </div>
+            <div class="mb-3">
+                <label for="about">Информация о себе</label>
+                <?php
+                    echo "<textarea class='form-control' type='text' placeholder='name@example.com' name='about' id='about' >".$about."</textarea>";
+                ?>
+            </div>
+            <h1 class="h3 fw-normal py-5 text-center">Для подтверждения введите пароль</h1>
+            <div class="mb-3">
+                <label for="password">Текущий пароль</label>
+                <input type="password" class="form-control" placeholder="******" name="password">
+            </div>
+            <div class="row justify-content-center mb-3 py-5">
+                <div class="col-md-auto">
+                    <button class="btn btn-primary" type="submit">Принять</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>

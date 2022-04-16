@@ -1,0 +1,30 @@
+<main class="bg-light py-5">
+	<div class="container py-5">
+		<div class="card mb-3">
+			<div class="row g-0" style="min-height: 256px;">
+				<div class="col-md-4 text-center py-5">
+					<img src="/../_images/profile.svg" class="rounded-start" width="128" height="128">
+				</div>
+				<div class="col-md-8 py-5">
+					<div class="card-body">
+						<?php
+							echo "<h5 class='card-title'>".$_SESSION['user']['name']."</h5>";
+							echo "<p class='card-text'>".$_SESSION['user']['about']."</p>";
+							echo "<p class='card-text'><small class='text-muted'>".$_SESSION['user']['email']."</small></p>";
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container card">
+		<div class="card-body row justify-content-center">
+				<?php
+					foreach ($buttons as $key => $value) {
+						echo "<div class='col-md-auto'><a id='bu' class='btn btn-secondary gx-3' type='button' href='".$value."'>".$key."</a></div>";
+					}
+				?>
+			</div>
+		</div>
+	</div>
+</main>
